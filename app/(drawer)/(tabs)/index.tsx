@@ -1,8 +1,9 @@
-import { View, Text, FlatList, StyleSheet, Image, Pressable, ActivityIndicator } from 'react-native'
+import { View, Text, FlatList, StyleSheet, Image, Pressable, ActivityIndicator, useColorScheme } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Searchbar } from 'react-native-paper';
 import { router } from 'expo-router';
 import { useGetMealsQuery } from '@/store/mealsApi';
+import { Colors } from '@/constants/theme';
 export const FONT_SIZES = {
   xs: 11, sm: 14, md: 16, lg: 18, xl: 20, xxl: 24, title: 28,
 };
@@ -11,6 +12,7 @@ export const FONTS = {
   bold: 'Poppins_700Bold',
 };
 export default function Index() {
+
   const { data: eggData, isLoading: eggLoading } = useGetMealsQuery('egg');
   const { data: chickenData, isLoading: chickenLoading } = useGetMealsQuery('chicken');
   const { data: vegData, isLoading: vegLoading } = useGetMealsQuery('veg');
@@ -53,6 +55,7 @@ export default function Index() {
     <FlatList
       data={vegMeals}
       keyExtractor={(item: any) => item.idMeal}
+      style={{ backgroundColor: 'white' }}  
       contentContainerStyle={styles.container}
       ListHeaderComponent={() => (
         <>

@@ -42,17 +42,25 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
   return (
     <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: true,
-        headerTitleStyle: {
-          fontFamily: FONTS.bold,
-          fontSize: FONT_SIZES.xl
-        },
-        headerRight: () => <NotificationIcon />,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen name="index" options={{ title: '🍽️ Meals', tabBarIcon: ({ color }) => <Ionicons size={28} name="home" color={color} /> }} />
+  screenOptions={{
+    tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+    headerShown: true,
+    headerStyle: {
+      backgroundColor: 'white',   
+    },
+    headerTitleStyle: {
+      fontFamily: FONTS.bold,
+      fontSize: FONT_SIZES.xl,
+      color: 'black',              
+    },
+    tabBarStyle: {
+      backgroundColor: 'white',   
+    },
+    tabBarInactiveTintColor: 'grey', 
+    headerRight: () => <NotificationIcon />,
+    tabBarButton: HapticTab,
+  }}>
+      <Tabs.Screen name="index" options={{ title: 'Meals', tabBarIcon: ({ color }) => <Ionicons size={28} name="home" color={color} /> }} />
       <Tabs.Screen name="explore" options={{ title: 'Explore', headerLeft: () => <BackButton />, tabBarIcon: ({ color }) => <Fontisto name="export" size={24} color={color} /> }} />
       <Tabs.Screen name="about" options={{ title: 'About', headerLeft: () => <BackButton />, tabBarIcon: ({ color }) => <Ionicons name="information-circle" size={24} color={color} /> }} />
       <Tabs.Screen name="settings" options={{ title: 'Settings', headerLeft: () => <BackButton />, tabBarIcon: ({ color }) => <Ionicons size={28} name="settings" color={color} /> }} />
