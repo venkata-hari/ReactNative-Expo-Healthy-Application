@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 import { useGetMealsQuery } from '@/store/mealsApi';
 import { Colors } from '@/constants/theme';
 export const FONT_SIZES = {
-  xs: 11, sm: 14, md: 16, lg: 18, xl: 20, xxl: 24, title: 28,
+  xs: 10, sm: 9, md: 16, lg: 18, xl: 20, xxl: 24, title: 28,
 };
 export const FONTS = {
   regular: 'Poppins_400Regular',
@@ -42,12 +42,13 @@ export default function Index() {
     <>
       <Text style={styles.sectionTitle}>{title}</Text>
       <FlatList
-        data={data}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(item: any) => item.idMeal}
-        renderItem={renderMealCard}
-      />
+     data={data}                 
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      keyExtractor={(item: any) => item.idMeal}
+      renderItem={renderMealCard}
+     
+    />
     </>
   );
 
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.regular,
   },
   searchInput: {
-    fontSize: FONT_SIZES.sm,
+    fontSize: FONT_SIZES.xs,
     fontFamily: FONTS.regular,
     minHeight: 0,
     top: 3.5,
@@ -123,19 +124,19 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   card: {
-    width: 80,
-    marginRight: 8,
+    width: 90,
+    marginRight: 5,
   },
   cardtext: {
     color: 'black',
     fontFamily: FONTS.bold,
     textAlign: 'center',
     marginTop: 1.5,
-    fontSize: FONT_SIZES.xs,
+    fontSize: FONT_SIZES.sm,
   },
   image: {
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     borderRadius: 20,
   },
   verticalCard: {
