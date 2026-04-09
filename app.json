@@ -7,7 +7,6 @@
     "icon": "./assets/images/icon.png",
     "scheme": "healthapp",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
@@ -43,20 +42,13 @@
       "expo-font"
     ],
     "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
+      "typedRoutes": true
     },
     "extra": {
       "router": {},
       "eas": {
         "projectId": "79162f08-2aac-41c9-a749-1d51730c8f49"
       }
-    },
-   "runtimeVersion": "1.0.0",
-    "updates": {
-      "url": "https://u.expo.dev/79162f08-2aac-41c9-a749-1d51730c8f49",
-      "enabled": true,
-      "checkAutomatically": "ON_LOAD"
     }
   }
 }
